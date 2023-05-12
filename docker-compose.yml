@@ -1,0 +1,14 @@
+# vue3
+
+version: '3'
+
+services:
+  alura-tracker-node:
+    image: node:16.16.0-alpine
+    container_name: alura-tracker-node
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - 3000:8080
+    command: sh -c "yarn && yarn serve"
