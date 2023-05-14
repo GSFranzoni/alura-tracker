@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-3 rounded-lg flex flex-row items-center w-full gap-2"
+    class="p-3 rounded-lg shadow-lg flex flex-row items-center w-full gap-2"
     :class="pickedVariant.background"
   >
     <font-awesome-icon
