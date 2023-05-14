@@ -16,7 +16,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 
 const variants = {
@@ -42,11 +42,14 @@ const variants = {
   },
 };
 
+type Variant = keyof typeof variants;
+
 export default defineComponent({
   name: "AppAlert",
   props: {
     variant: {
-      type: String,
+      type: String as () => Variant,
+      required: true,
     },
     message: {
       type: String,
@@ -55,7 +58,7 @@ export default defineComponent({
   },
   computed: {
     pickedVariant() {
-      return variants[this.variant] || variants.info;
+      return variants[this.variant];
     },
   },
 });

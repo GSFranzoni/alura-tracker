@@ -1,6 +1,6 @@
 # vue3
 
-version: '3'
+version: "3"
 
 services:
   alura-tracker-node:
@@ -11,4 +11,4 @@ services:
       - ./:/app
     ports:
       - 3000:8080
-    command: sh -c "yarn && yarn serve"
+    command: sh -c "yarn && yarn global add @vue/cli && yarn serve"

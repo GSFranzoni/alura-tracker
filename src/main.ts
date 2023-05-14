@@ -16,13 +16,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
-library.add([
+library.add(
   faPlay,
   faStop,
   faExclamationCircle,
   faExclamationTriangle,
-  faInfoCircle,
-]);
+  faInfoCircle
+);
 
 import "./index.css";
 

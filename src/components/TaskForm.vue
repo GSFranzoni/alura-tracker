@@ -4,9 +4,9 @@
       class="p-2 rounded-md flex-1"
       type="text"
       placeholder="Type your task"
-      v-model="task"
+      v-model="task.name"
     />
-    <task-timer :seconds="seconds" />
+    <task-timer :seconds="task.seconds" />
     <div class="flex justify-between gap-2">
       <app-button
         label="Start"
@@ -26,7 +26,7 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import TaskTimer from "./TaskTimer.vue";
 import AppButton from "./AppButton.vue";
@@ -36,9 +36,11 @@ export default defineComponent({
   name: "TaskForm",
   emits: ["stop"],
   data: () => ({
-    task: "",
-    seconds: 0,
-    interval: undefined,
+    task: {
+      name: "",
+      seconds: 0,
+    },
+    interval: undefined as number | undefined,
   }),
   computed: {
     running() {
@@ -48,18 +50,17 @@ export default defineComponent({
   methods: {
     start() {
       this.interval = setInterval(() => {
-        this.seconds++;
+        this.task.seconds++;
       }, 1000);
     },
     stop() {
       clearInterval(this.interval);
       this.interval = undefined;
-      this.$emit("stop", {
-        task: this.task,
-        seconds: this.seconds,
-      });
-      this.task = "";
-      this.seconds = 0;
+      this.$emit("stop", this.task);
+      this.task = {
+        name: "",
+        seconds: 0,
+      };
     },
   },
 });
