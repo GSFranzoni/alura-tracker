@@ -1,7 +1,7 @@
 <template>
   <section class="grid grid-cols-4 h-screen">
     <side-bar />
-    <main class="flex flex-col h-full col-span-3">
+    <main class="flex flex-col h-full col-span-3 bg-[color:var(--bg-primary)]">
       <task-form v-on:stop="onStop" />
       <div class="flex flex-col gap-2 p-2">
         <app-task v-for="(task, index) in tasks" :key="index" :task="task" />
@@ -42,4 +42,4 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style lang="css"></style>

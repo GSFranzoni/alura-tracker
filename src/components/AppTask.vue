@@ -1,18 +1,21 @@
 <template>
   <div
-    class="p-3 bg-slate-300 shadow-lg rounded-lg flex flex-row items-center w-full"
+    class="p-3 shadow-lg rounded-lg flex flex-row items-center w-full bg-[color:var(--bg-secondary)]"
   >
-    <span class="text-gray-900 text-sm font-semibold flex-1">{{
-      task.name || "Unnamed task"
-    }}</span>
-    <task-timer class="flex-1" :seconds="task.seconds" />
+    <span
+      class="text-sm font-semibold flex-1 text-[color:var(--text-primary)]"
+      >{{ task.name || "Unnamed task" }}</span
+    >
+    <task-timer
+      class="flex-1 text-[color:var(--text-primary)]"
+      :seconds="task.seconds"
+    />
   </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
 import TaskTimer from "./TaskTimer.vue";
-import { Task } from "../types/Task";
 
 export default defineComponent({
   name: "AppTask",
@@ -21,7 +24,6 @@ export default defineComponent({
   },
   props: {
     task: {
-      type: Task,
       required: true,
     },
   },

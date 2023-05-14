@@ -13,6 +13,8 @@ import {
   faExclamationCircle,
   faExclamationTriangle,
   faInfoCircle,
+  faMoon,
+  faSun,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -21,7 +23,9 @@ library.add(
   faStop,
   faExclamationCircle,
   faExclamationTriangle,
-  faInfoCircle
+  faInfoCircle,
+  faMoon,
+  faSun
 );
 
 import "./index.css";

@@ -1,7 +1,9 @@
 <template>
-  <section class="flex flex-row items-center gap-5 shadow-lg p-4">
+  <section
+    class="flex flex-row items-center gap-5 shadow-lg p-4 bg-[color:var(--bg-primary)]"
+  >
     <input
-      class="p-2 rounded-md flex-1"
+      class="p-2 rounded-md flex-1 bg-[color:var(--bg-secondary)] text-[color:var(--text-primary)]"
       type="text"
       placeholder="Type your task"
       v-model="task.name"

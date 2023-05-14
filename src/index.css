@@ -2,11 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f5f5f5;
+}
+
+:root {
+  --bg-primary: #fff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #e0e0e0;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-tertiary: #999;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #2b2d42;
+  --bg-secondary: #1d1f2f;
+  --bg-tertiary: #14161f;
+  --text-primary: #fff;
+  --text-secondary: #ccc;
+  --text-tertiary: #999;
 }

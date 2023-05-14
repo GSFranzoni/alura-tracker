@@ -1,5 +1,5 @@
 <template>
-  <span class="text-gray-900 text-sm">
+  <span class="text-sm text-[color:var(--text-primary)]">
     <strong>{{ time }}</strong>
   </span>
 </template>
