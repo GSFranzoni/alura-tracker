@@ -10,6 +10,11 @@
           :task="task"
           :seconds="seconds"
         />
+        <app-alert
+          v-if="tasks.length === 0"
+          variant="warning"
+          message="No tasks yet"
+        />
       </div>
     </main>
   </section>
@@ -20,6 +25,7 @@ import { defineComponent } from "vue";
 import SideBar from "./components/SideBar.vue";
 import TaskForm from "./components/TaskForm.vue";
 import AppTask from "./components/AppTask.vue";
+import AppAlert from "./components/AppAlert.vue";
 
 export default defineComponent({
   name: "App",
@@ -27,6 +33,7 @@ export default defineComponent({
     SideBar,
     TaskForm,
     AppTask,
+    AppAlert,
   },
   data: () => ({
     tasks: [],
