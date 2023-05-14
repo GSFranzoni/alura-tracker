@@ -34,6 +34,7 @@ import AppButton from "./AppButton.vue";
 export default defineComponent({
   components: { TaskTimer, AppButton },
   name: "TaskForm",
+  emits: ["stop"],
   data: () => ({
     task: "",
     seconds: 0,
@@ -53,9 +54,9 @@ export default defineComponent({
     stop() {
       clearInterval(this.interval);
       this.interval = undefined;
-      this.$emit("onStop", {
+      this.$emit("stop", {
         task: this.task,
-        time: this.time,
+        seconds: this.seconds,
       });
       this.task = "";
       this.seconds = 0;
